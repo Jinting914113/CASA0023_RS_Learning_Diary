@@ -3,8 +3,8 @@ project:
   output-dir: docs
   
 book:
-  title: "learning_diary"
-  author: "Norah Jones"
+  title: "Learning Diary - CASA0023"
+  author: "Jinting Ji"
   date: "3/14/2024"
   chapters:
     - index.qmd
