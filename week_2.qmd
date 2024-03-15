@@ -5,7 +5,6 @@ output: html_document
 
 For my Xaringan presentation please click or copy the following link:
 
-https://jinting914113.github.io/CASA23_RS/
-
+<https://jinting914113.github.io/CASA23_RS/>
 
 No entries for this week

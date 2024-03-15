@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Learning Diary - CASA0023 - 3&nbsp; Week 3 - Remotely Sensed Data Corrections and Data joining and Enhancement</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./week_2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remotely Sensed Data Corrections and Data joining and Enhancement</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Learning Diary - CASA0023</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week_2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remotely Sensed Data Corrections and Data joining and Enhancement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#content-summary" id="toc-content-summary" class="nav-link active" data-scroll-target="#content-summary"><span class="header-section-number">3.1</span> 3.1 Content summary:</a>
+  <ul class="collapse">
+  <li><a href="#corrections" id="toc-corrections" class="nav-link" data-scroll-target="#corrections"><span class="header-section-number">3.1.1</span> 3.1.1 Corrections</a></li>
+  <li><a href="#data-joining-and-enhancement" id="toc-data-joining-and-enhancement" class="nav-link" data-scroll-target="#data-joining-and-enhancement"><span class="header-section-number">3.1.2</span> 3.1.2 Data joining and enhancement</a></li>
+  </ul></li>
+  <li><a href="#applications-of-the-content" id="toc-applications-of-the-content" class="nav-link" data-scroll-target="#applications-of-the-content"><span class="header-section-number">3.2</span> 3.2 Applications of the content:</a></li>
+  <li><a href="#personal-reflection" id="toc-personal-reflection" class="nav-link" data-scroll-target="#personal-reflection"><span class="header-section-number">3.3</span> 3.3 Personal reflection:</a></li>
+  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list"><span class="header-section-number">3.4</span> 3.4 Reference list</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remotely Sensed Data Corrections and Data joining and Enhancement</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="content-summary" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="content-summary"><span class="header-section-number">3.1</span> 3.1 Content summary:</h2>
+<p>This is an outline of what I have learnt this week and I will follow these outlines to summarise the knowledge or skills I have learnt:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk3/the_outline_of_summary.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Mind map for the summary outline</p>
+<section id="corrections" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="corrections"><span class="header-section-number">3.1.1</span> 3.1.1 Corrections</h3>
+<p>Because of the atmosphere, unevenness of the earth’s surface and other factors, remote sensing images are sometimes inaccurate, so we need to correct them. For example, as the scan line corrector on Landsat 7 failed, we need to correct the remotely sensed images.</p>
+<p>Remote sensed products are now often “corrected” to “Analysis Ready Data” (ARD), for instance, Landsat ARD products are processed through LEDPAS and L8SR algorithms to achieve surface reflectance standards, utilizing advanced algorithms and data processing techniques like LaSRC to provide users with processed surface reflectance data. However, when dealing with data not processed as ARD (e.g., very high resolution, drone data), understanding how the data was created remains crucial.</p>
+<section id="geometric-correction" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">3.1.1.1</span> <strong>3.1.1.1 Geometric Correction</strong></h4>
+<p>Geometric correction involves correcting spatial distortions in remote sensed images caused by the sensor’s angle, uneven ground, wind (from plane) and and Rotation of the earth (from satellite).</p>
+<p><strong>How:</strong></p>
+<p>It eliminates spatial biases by resampling and transforming images based on ground control points or other reference data to correct their spatial positions.</p>
+<p><strong>Corrected by who:</strong></p>
+<p>Remote sensing data providers or professional users (who need to ensure spatial accuracy of the remotely sensed data)</p>
+</section>
+<section id="atmospheric-correction" class="level4" data-number="3.1.1.2">
+<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="atmospheric-correction"><span class="header-section-number">3.1.1.2</span> <strong>3.1.1.2 Atmospheric Correction</strong></h4>
+<p>It deals with the effects of atmospheric scattering and absorption (or Topographic attenuation) in remote sensing images to obtain the true reflectance of the Earth’s surface.</p>
+<p><strong>Why is it unnecessary in some cases？</strong></p>
+<p>Atmospheric correction is often unnecessary when classifying a single image, independently classifying multi-date imagery, creating composite images, or using training data extracted from all data, as the precise correction of atmospheric factors has limited impact on the final outcomes in these scenarios.</p>
+<p><strong>How:</strong></p>
+<ul>
+<li><p>Atmospheric correction could be achieved through relative methods, such as normalizing the intensities of different bands within a single image, normalizing intensities of bands from many dates to one, dark object subtraction (DOS), or histogram adjustment to approximate the elimination of atmospheric effects. Absolute methods convert digital brightness values into scaled surface reflectance using atmospheric radiative transfer models, but it requires atmospheric models, local atmospheric visibility data, and tools like ACORN, FLAASH, etc.</p></li>
+<li><p>In the practical of this week, we use Dark Object Subtraction (DOS). It is a simple and effective method for atmospheric correction that reduces atmospheric effects by identifying the atmospheric scatter value represented by the darkest pixel in an image and subtracting it from the entire image.</p></li>
+</ul>
+<p><strong>Corrected by who:</strong></p>
+<p>Primarily carried out by data providers or specialized researchers using dedicated software, aimed at eliminating atmospheric effects to obtain true surface reflectance.</p>
+</section>
+<section id="orthorectification-topographic-correction" class="level4" data-number="3.1.1.3">
+<h4 data-number="3.1.1.3" class="anchored" data-anchor-id="orthorectification-topographic-correction"><span class="header-section-number">3.1.1.3</span> <strong>3.1.1.3 Orthorectification / Topographic Correction</strong></h4>
+<p>Orthorectification / topographic correction involves correcting deformations caused by terrain in images using terrain information, giving them true map geometric characteristics. It requires sensor geometry and an elevation model.</p>
+<p><strong>How:</strong></p>
+<p>Orthorectification / topographic correction involves removing terrain-induced distortions in images by considering sensor geometry and utilizing a Digital Elevation Model (DEM), ensuring each pixel is depicted as if captured from directly overhead for a clear, terrain-unaffected image. This process typically involves using specialized software (e.g., QGIS, SAGA GIS, or R packages like topocorr and RStoolbox) and formulas (e.g., cosine correction, Minnaert correction, etc.) to achieve this.</p>
+<p><strong>Corrected by who:</strong></p>
+<p>It is typically done by data providers as a preprocessing step or customized by researchers using GIS software as needed.</p>
+</section>
+<section id="radiometric-calibration" class="level4" data-number="3.1.1.4">
+<h4 data-number="3.1.1.4" class="anchored" data-anchor-id="radiometric-calibration"><span class="header-section-number">3.1.1.4</span> <strong>3.1.1.4 Radiometric Calibration</strong></h4>
+<p>Radiometric correction is the process of adjusting remote sensing data to eliminate effects caused by sensor characteristics and atmospheric conditions, making the data reflect true surface radiometric properties.</p>
+<p><strong>How:</strong></p>
+<p>Radiometric correction is achieved by applying calibration parameters (such as gain and bias) to each pixel value of the digital image, converting digital number (DN) to spectral radiance.</p>
+<p><strong>Corrected by who:</strong></p>
+<p>By remote sensing data providers for basic processing or by end-users for more in-depth corrections to meet specific application requirements.</p>
+<p><strong>Summary of the jargon:</strong></p>
+<ul>
+<li><p><strong>Digital Number (DN):</strong> It is an uncalibrated value representing the intensity of electromagnetic radiation of a pixel, without any unit.</p></li>
+<li><p><strong>Spectral Radiance:</strong> It is the amount of light within a band from a sensor in the field of view per unit area, solid angle, and wavelength, measured in W/m²/sr/μm.</p></li>
+<li><p><strong>Sensor Calibration (Gain and Bias):</strong> It defines the relationship between digital number and spectral radiance through gain and bias parameters.</p></li>
+<li><p><strong>Top of Atmosphere (TOA) Radiance:</strong> It refers to the amount of light in meaningful units observed by the sensor, including effects of light source, atmosphere, and surface material.</p></li>
+<li><p><strong>Reflectance:</strong> It is the ratio of the amount of light reflected by a target to the amount of light it receives, an inherent property of the material.</p></li>
+<li><p><strong>Top of Atmosphere (TOA) Reflectance:</strong> It is the radiance adjusted to remove effects of the light source, reflecting the inherent properties of surface materials.</p></li>
+<li><p><strong>Surface Reflectance:</strong> It is the reflectance with light source and atmospheric effects removed, more accurately representing the reflective characteristics of surface materials.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-joining-and-enhancement" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="data-joining-and-enhancement"><span class="header-section-number">3.1.2</span> 3.1.2 Data joining and enhancement</h3>
+<section id="feathering" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="feathering"><span class="header-section-number">3.1.2.1</span> <strong>3.1.2.1 Feathering</strong></h4>
+<p><strong>Data Joining:</strong></p>
+<p>It refers to the process in remote sensing of merging multiple datasets (such as images) into one continuous large image or mosaic, commonly known as mosaicking. ‘Mosaicking in with a standard method isn’t appropriate for satellite imagery’.</p>
+<p><strong>Feathering:</strong></p>
+<ul>
+<li><p>It is an image processing technique used to smooth the transition area between images in remote sensing data joining, eliminating seam lines to create a seamless image mosaic.</p></li>
+<li><p><strong>Method of Feathering:</strong> It involves sampling representative samples within the overlap area, adjusting image brightness values using a histogram matching algorithm to achieve a smooth brightness transition between the two images.</p></li>
+</ul>
+<p><strong>Practical:</strong></p>
+<p>When a single image does not cover the entire study area, downloading two or more satellite image tiles and mosaicking (or merging) them together, using functions like ‘mosaic’ in the ‘terra’ library for an average merge, could extend the coverage of the study area.</p>
+</section>
+<section id="image-enhancement" class="level4" data-number="3.1.2.2">
+<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="image-enhancement"><span class="header-section-number">3.1.2.2</span> <strong>3.1.2.2 Image enhancement</strong></h4>
+<p>Image enhancement is the process of improving the visual appearance or results of an image by increasing the contrast and distinguishability between features in the image.</p>
+<p><strong>Contrast Enhancement:</strong></p>
+<ul>
+<li><p>Enhancing the contrast of an image by expanding its dynamic range, making the light and dark areas more pronounced.</p></li>
+<li><p><strong>Usage:</strong> Achieved through methods like minimum-maximum, percentage linear and standard deviation, piecewise linear contrast stretch.</p></li>
+</ul>
+<p><strong>Ratio:</strong></p>
+<ul>
+<li><p>Ratio image enhancement is a technique that emphasizes or reveals specific landscape features by calculating the ratio of values between two spectral bands.</p></li>
+<li><p><strong>Usage:</strong> For instance, the Normalized Burn Ratio (NBR) highlights burned areas or vegetation health by calculating the ratio of the difference to the sum of the Near-Infrared (NIR) and Short-Wave Infrared (SWIR) bands.</p></li>
+<li><p><strong>Practical:</strong></p>
+<ul>
+<li><p>Ratio is a method that emphasizes or exaggerates certain landscape features based on the characteristic that healthy vegetation has higher reflectance in the NIR and absorbs more in the Red wavelength. The Normalized Difference Vegetation Index (NDVI) uses this trait to highlight areas of healthy vegetation.</p></li>
+<li><p>In R, NDVI can be calculated using a specific formula, and the data can then be reclassified to highlight areas where NDVI is equal to or greater than 0.2.</p></li>
+</ul></li>
+</ul>
+<p><strong>Filtering:</strong></p>
+<ul>
+<li><p>Improving image quality by applying low-pass (smoothing local variations) or high-pass (enhancing local details) filters to the image.</p></li>
+<li><p><strong>Usage:</strong> Low-pass filtering smooths the image by summing all pixels in a 3x3 window and dividing by 9; high-pass filtering is used to highlight edges and texture in the image.</p></li>
+<li><p><strong>Practical:</strong> The Laplacian filter can be used to enhance edges and details in an image. In R, a 3x3 window filter could be applied to a specific band using the focal function from the terra package.</p></li>
+</ul>
+<p><strong>PCA:</strong></p>
+<ul>
+<li><p>A technique to transform multispectral data into an uncorrelated smaller dataset, retaining most of the original information and reducing future computational load.</p></li>
+<li><p><strong>Usage:</strong> Applied by using functions like ‘prcomp()’ in the ‘terra’ package, extracting principal components based on the principle of maximizing variance within the dataset.</p></li>
+<li><p><strong>Practical:</strong></p>
+<ul>
+<li><p>Principal Component Analysis (PCA) aims to reduce the dimensionality of data. By centering and scaling the data, it allows for the comparison of data measured in different ways (e.g., spectral and texture data). PCA takes advantage of multicollinearity to create new, uncorrelated variables.</p></li>
+<li><p>In R, PCA can be performed using the prcomp function, and the PCA analysis results can be mapped using the predict function.</p></li>
+</ul></li>
+</ul>
+<p><strong>Texture:</strong></p>
+<ul>
+<li><p>It reveals surface structure and compositional features focusing on the spatial variation of grayscale values in an image.</p></li>
+<li><p><strong>Usage:</strong> Enhancing image texture by calculating first-order (occurrences) and second-order (relationships between pixel pairs) statistics, and applying co-occurrence matrices to analyze the angular relationships and distances between pixels.</p></li>
+<li><p><strong>Practical:</strong></p>
+<ul>
+<li><p>Texture analysis aims to identify the relationships between pixels in an image, often wanting to see how pixel-to-pixel relationships differ in different parts of the image. By calculating the GLCM for small areas and then recording its texture measure to cover the entire image, the variation in pixel relationships across different locations can be quantified.</p></li>
+<li><p>In R, the ‘GLCMTextures’ package is able to be used to compute texture, and the original data may need to be converted back to a float for use.</p></li>
+</ul></li>
+</ul>
+<p><strong>Fusion:</strong></p>
+<ul>
+<li><p>Combining data from multiple sensors/sources to enhance the resolution and quality of an image.</p></li>
+<li><p><strong>Usage:</strong> In Landsat data, multispectral data (30m) can be sharpened by fusion with the panchromatic band (15m), typically applied to visible bands.</p></li>
+<li><p><strong>Practical:</strong></p>
+<ul>
+<li><p>Data fusion is the process of appending new raster data to existing data or making a new raster dataset with different bands, which could be done by combining the texture measure (and the original spectral data) with the existing data.</p></li>
+<li><p>In R, the texture data and original data can be combined using the ‘c’ function from the ‘terra’ package.</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="applications-of-the-content" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="applications-of-the-content"><span class="header-section-number">3.2</span> 3.2 Applications of the content:</h2>
+<p>As I mentioned in my summary, although many remote sensing image products have now been corrected by data providers, there are also images that are uncorrected or require more demanding corrections. According to Aasen <em>et al.</em> (2018), the article discusses sensor technology, measurement procedures, and data correction workflows (workflows graph as shown below (‘Empirical Line Correction’, which is covered in our lecture)) in UAV spectral remote sensing, including geometric processing, radiometric calibration, scene reflectance generation, and scene reflectance correction. These correction techniques help in accurately representing the energy reflected from the environment as pixels in a data product. The article provides a comprehensive evaluation of the state-of-the-art methods in UAV spectral remote sensing, incorporating over a decade of experimentation and operational demonstrations to offer clear guidance for acquiring reliable data. Despite providing detailed techniques and correction workflows, implementing these complex techniques and processes may be challenging for beginners and small project teams.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk3/wk3_app_workflow.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Data correction workflows (Aasen <em>et al.,</em> 2018)</p>
+<p>Ratio enhancement is widely used in reality and NDVI is a very popular application of ratio enhancement, so the application of NDVI is crucial. NDVI (Normalized Difference Vegetation Index) is a numerical indicator that uses the visible and near-infrared bands of the electromagnetic spectrum to assess vegetation health and density. It is calculated using the following formula:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk3/NDVI.jpg" class="img-fluid figure-img" width="191"></p>
+</figure>
+</div>
+<p>There are several papers mentioning the application of NDVI, but certainly the application of NDVI has some disadvantages besides the advantages. Sims <em>et al.</em> (2014) uses NDVI as the main tool to assess vegetation responses to drought, finding that forest ecosystems maintain higher greenness compared to non-forest ecosystems under drought conditions, with little change in greenness even under extreme drought. In this essay, NDVI assists in improving predictions of water stress impacts on forest ecosystems at low spectral sensitivity levels by demonstrating differences in drought sensitivity among ecosystems (Sims <em>et al.,</em> 2014). For example, predicting declines in carbon uptake in forest ecosystems by observing NDVI declines in adjacent ecosystems with high spectral sensitivity (Sims <em>et al.,</em> 2014). NDVI could reveal differential responses of forest and non-forest ecosystems to drought, providing an effective tool for predicting and assessing carbon uptake in forest ecosystems under global climate change (Sims <em>et al.,</em> 2014). However, NDVI may saturate in dense forest systems, limiting its ability to accurately reflect physiological responses of forest ecosystems under extreme drought conditions.</p>
+<p>In addition, NDVI is utilized as a tool to monitor the performance and changes of certain strategic crops in Egypt throughout the growing season, showcasing a time series analysis of crop growth stages and vegetation health (Farg <em>et al.,</em> 2019).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk3/the_application_of NDVI_on_the crop.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The application of NDVI on the crop (‘Different NDVI for June, July and September for the study area.’) (Farg <em>et al.,</em> 2019)</p>
+<p>NDVI shows the capability for accurate crop classification under complex terrain conditions, enhancing the precision of crop discrimination through analysis of remote sensing data over different periods (Farg <em>et al.,</em> 2019). Although time-series analysis based on NDVI is instrumental in understanding crop growth and health, it may not be sufficiently sensitive to the minute spectral variations among different crop types. This limitation is particularly pronounced in the initial phases of crop development, which could affect the precise identification and categorization of certain crop types.</p>
+</section>
+<section id="personal-reflection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="personal-reflection"><span class="header-section-number">3.3</span> 3.3 Personal reflection:</h2>
+<p>This week’s summary section is organised in a more textual way. Although I have studied remote sensing in my undergraduate studies and have worked with some of the applications of remotely sensing, we have only had a superficial understanding of image correction because many remote sensing imagery products have been corrected in their own right. In this week’s work, we covered a lot of knowledge and skills of image corrections and image enhancement, and I would like to make up for my shortcomings, so I’ve put together more of a basics section.</p>
+<p>Although the principles of the correction technique for remotely sensed images are difficult, the technique could be applied to high-resolution images taken by UAVs and is constantly being developed, which is probably one of the reasons why the technique is so attractive. Data correction is an early stage in the processing and analysis of remotely sensed data (and is needed anyway, even though much of the data that may be available to the user may have already been corrected by the data provider) and is very important and meaningful, as it is the foundation of all analyses related to remotely sensed data. If the individual works in a company related to remotely sensed image processing, then the correction of remotely sensed images may be a necessary element to master.</p>
+<p>Before studying this course, image enhancement was something I was exposed to a lot, especially ratio enhancement. Image enhancement makes it easier to recognise and extract features of water bodies, plants and other features. This part is also very widely used in reality. In China, the Bureau of Natural Resources often uses image enhancement to survey natural resources such as forests and so on.</p>
+<p>Overall, I have learnt knowledge and skills in remotely sensed image product corrections and image joining and enhancement this week.This allows me to supplement the shortcomings of my undergraduate learning content to some extent, and enriches my knowledge, which may allow me to be more competitive in my future job.</p>
+</section>
+<section id="reference-list" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="reference-list"><span class="header-section-number">3.4</span> 3.4 Reference list</h2>
+<p>Aasen, H., Honkavaara, E., Lucieer, A., &amp; Zarco-Tejada, P. J. (2018) Quantitative Remote Sensing at Ultra-High Resolution with UAV Spectroscopy: A Review of Sensor Technology, Measurement Procedures, and Data Correction Workflows. <em>Remote sensing (Basel, Switzerland)</em>. [Online] 10 (7), 1091-. https://doi.org/10.3390/rs10071091</p>
+<p>Farg, E., Ramadan, M. N., and Arafat, S. M. (2019) Classification of some strategic crops in Egypt using multi remotely sensing sensors and time series analysis. <em>The Egyptian journal of remote sensing and space sciences</em>. [Online] 22 (3), 263–270. https://doi.org/10.1016/j.ejrs.2019.07.002</p>
+<p>Sims, D. A., Brzostek, E. R., Rahman, A. F., Dragoni, D., and Phillips, R. P. (2014) An improved approach for remotely sensing water stress impacts on forest C uptake. <em>Global change biology</em>. [Online] 20 (9), 2856–2866. https://doi.org/10.1111/gcb.12537</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week_2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week_2</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
