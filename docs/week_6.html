@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Learning Diary - CASA0023 - 6&nbsp; Week 6 - Intro to GEE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./week_5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 - Intro to GEE</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Learning Diary - CASA0023</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">week_2</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remotely Sensed Data Corrections and Data joining and Enhancement</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 4 - The Policy of ‘Arable Land Minimum’ in Shanghai</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 - Intro to GEE</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">6.1</span> 6.1 Summary:</a>
+  <ul class="collapse">
+  <li><a href="#the-set-up-of-gee" id="toc-the-set-up-of-gee" class="nav-link" data-scroll-target="#the-set-up-of-gee"><span class="header-section-number">6.1.1</span> 6.1.1 The set up of GEE</a></li>
+  <li><a href="#gee-in-action-how-we-use-it" id="toc-gee-in-action-how-we-use-it" class="nav-link" data-scroll-target="#gee-in-action-how-we-use-it"><span class="header-section-number">6.1.2</span> 6.1.2 GEE in action (how we use it)</a></li>
+  <li><a href="#summary-of-practical-for-this-week" id="toc-summary-of-practical-for-this-week" class="nav-link" data-scroll-target="#summary-of-practical-for-this-week"><span class="header-section-number">6.1.3</span> 6.1.3 Summary of practical for this week</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">6.2</span> 6.2 Application:</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">6.3</span> 6.3 Reflection:</a></li>
+  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list"><span class="header-section-number">6.4</span> 6.4 Reference list</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6 - Intro to GEE</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> 6.1 Summary:</h2>
+<p>Google Earth Engine (GEE) offers a platform enabling users to perform geospatial analysis on Google’s infrastructure. Users could interact with this platform through multiple ways. The Code Editor, a web-based integrated development environment (IDE), allows for script writing and running. Meanwhile, the Explorer offers a simplified web application for navigating the data catalog and.running basic analyses. Additionally, the client libraries provide Python and JavaScript wrappers around their web API (refernce source: <a href="https://earthengine.google.com/platform/">GEE</a>).</p>
+<section id="the-set-up-of-gee" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="the-set-up-of-gee"><span class="header-section-number">6.1.1</span> 6.1.1 The set up of GEE</h3>
+<p>This is a mind map summarising this section and covering the knowledge collated:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/The_set_up_of_GEE.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The set up of GEE mind map</p>
+</section>
+<section id="gee-in-action-how-we-use-it" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="gee-in-action-how-we-use-it"><span class="header-section-number">6.1.2</span> 6.1.2 GEE in action (how we use it)</h3>
+<p><strong>What I think should be remembered on using GEE is this figure, which contains the location of each interactive action button:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/what_does_GEE_look_like.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Code editor of GEE (source: <a href="https://github.com/andrewmaclachlan/CASA0023-lecture-5/blob/main/img/Code_editor_diagram.png">CASA0023</a>)</p>
+<p><strong>Overall, what typical processes can we do in GEE? Please see this mind map below:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/What_typical_processes_can_we_do_in_GEE.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Mind map of what typical processes we could do in GEE</p>
+<p><strong>In this week, we covered what we could do in GEE (click the link to review the knowledge or code):</strong></p>
+<ul>
+<li><p><a href="https://andrewmaclachlan.github.io/CASA0023-lecture-5/#23">Loading image collections</a></p></li>
+<li><p><a href="https://andrewmaclachlan.github.io/CASA0023-lecture-5/#33">Reducing images (by region or regions or neighbourhoods)</a></p></li>
+<li><p><a href="https://andrewmaclachlan.github.io/CASA0023-lecture-5/#40">Regression</a></p></li>
+<li><p><a href="https://andrewmaclachlan.github.io/CASA0023-lecture-5/#47">Joins and filtering</a></p></li>
+</ul>
+</section>
+<section id="summary-of-practical-for-this-week" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="summary-of-practical-for-this-week"><span class="header-section-number">6.1.3</span> 6.1.3 Summary of practical for this week</h3>
+<p><a href="https://andrewmaclachlan.github.io/CASA0023/5_GEE_I.html#mosaic-images">This week’s practical</a> focused on the basics of using Google Earth Engine (GEE), including how to construct points, load and process Landsat image data on GEE, as well as how to perform image clipping, texture analysis, and Principal Component Analysis (PCA). Finally, we also learned exporting data and calculating NDVI in GEE.</p>
+<p>Using GEE has allowed me to get the results of various analysis much more quickly, especially the texture enhancement and PCA analysis much faster than week three. Below are some of the results I’ve extracted from following the tutorials in practical:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/texture.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Texture</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/PCA.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>PCA band 1 and 2</p>
+<p><strong>I had partly forgotten about the analysis of the bright places in the image obtained by texture enhancement, so here’s a recap:</strong></p>
+<ul>
+<li><p>In remote sensing texture analysis, bright areas usually indicate regions of high texture variation or contrast. This may mean:</p>
+<ul>
+<li><p>Complex surface textures: For example, urban areas, forests, or agricultural fields, where the surface texture varies significantly due to different land features.</p></li>
+<li><p>High texture contrast areas: Compared to surrounding environments, these regions exhibit rapid spatial changes in surface characteristics, showing high-contrast texture features.</p></li>
+<li><p>Changes in land features or geomorphology: such as the boundaries between bare soil and vegetated areas, where texture analysis can reveal details of these geomorphological changes.</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="application" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> 6.2 Application:</h2>
+<p>Firstly, GEE has a very wide range of applications and could be used in the areas described in the image below (although it may have been used by someone else I think the image still sums up the wide range of applications for GEE quite well):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk6/GEE_applications.gif" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The figure of GEE Applications (Amani <em>et al.</em>, 2020)</p>
+<p>I think that NDVI has a wide range of applications even though it is a relatively common method of ratio enhancement in remotely sensing. In fact, the characteristics of GEE as a cloud computing platform could be seen from the academic research related to GEE and NDVI. That is, it makes it possible to calculate and analyse NDVI for large scale and long time series data:</p>
+<ul>
+<li><p>Ruifeng <em>et al.</em> (2023) used the Google Earth Engine (GEE) platform and Landsat Normalized Difference Vegetation Index (NDVI) datasets, employing the Otsu algorithm to extract the spatial extent of limestone mining areas in Qingzhou City, Shandong Province, from 1985 to 2020. The research identified that the mining areas were primarily located in Shaozhuang Town, Wangfu Street, and the northern part of Miaozi Town, expanding from 2.0 km² in 1985 to 19.5 km² in 2020, more than a tenfold increase (Ruifeng <em>et al.</em>, 2023). The advantage of utilizing NDVI and the GEE platform is the ability to efficiently process large datasets and rapidly identify overall changes in vegetation cover. However, its limitation lies in the inability to analyze the causes of those changes, merely highlighting areas where there has been a general increase or decrease in vegetation cover.</p></li>
+<li><p>Mandal and Hosaka (2020) utilized the Google Earth Engine (GEE) platform and Landsat satellite images to assess the impact of cyclone disturbances on the Sundarbans mangrove forests in Bangladesh and India by evaluating changes in the Normalized Difference Vegetation Index (NDVI) before and after 21 cyclones between 1988 and 2016. The results showed that the affected forest area ranged from 0.5% to 24.1%, with the 2007 Sidr cyclone and a 1988 cyclone affecting 24.1% and 20.4% of the forest area, respectively (Mandal and Hosaka, 2020). The study found a significant positive correlation between cyclone maximum wind speed and the affected forest area, especially when the wind speed exceeded 101.9 km/h, significantly increasing the impact on forests (Mandal and Hosaka, 2020). The advantage of using NDVI and the GEE platform for analysis lies in the ability to process large datasets over long time series efficiently, providing a rapid and effective assessment of cyclone impacts on forests. However, this method is limited in that it captures changes in vegetation cover but cannot directly reflect the physical damage to tree structures caused by cyclones, or other ecological effects triggered by cyclones.</p></li>
+</ul>
+</section>
+<section id="reflection" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> 6.3 Reflection:</h2>
+<p>The long awaited Google Earth Engine section has arrived! Actually, I have used GEE in my undergraduate dissertation and have also attended GEE trainings for representatives from various Chinese universities at a Chinese academic conference. At that time I have deeply felt the powerfulness of GEE because of its cloud computing attribute. A lot of work that cannot be done on a PC is possible with GEE, especially for analysing and researching large geographical areas and long time series. And I think GEE is much easier to use than ENVI or SNAP, as I only need to enter the code. For the same task, GEE is much faster than a PC.</p>
+<p>It’s been more than a year since I’ve used GEE, so I’ve made a mind map to summarise and organise the content of this week’s lessons to make it easier for me to review later. I reviewed the basic operations of GEE such as loading and exporting, and I have also learnt how to do texture, PCA and other image enhancement techniques in GEE, which is very beneficial. Through reading the literature it has also been demonstrated that GEE works well for processing and analysing long time series and large scale data.</p>
+<p>The power of GEE goes far beyond this week’s content, machine learning algorithms and other advanced algorithmic applications analysis could also be done with the help of GEE, which I am very interested in, and I look forward to exploring and learning more deeply about GEE next week!</p>
+<p>It occurs to me that there is also a geographic cloud computing platform being developed by a company in China. In China, the geographic cloud computing platform now available is developed by a Chinese company called ‘PIESAT’, which is called ‘PIE-Engine’ where you are able to do many same things as GEE. In fact, the senior vice president of their company is a visiting professor to my undergraduate major, so I know the existence of ‘PIE-Engine’. I’m sure it would be very interesting to explore ‘PIE-Engine’ while studying GEE.</p>
+</section>
+<section id="reference-list" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="reference-list"><span class="header-section-number">6.4</span> 6.4 Reference list</h2>
+<p>Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A., Mirmazloumi, S. M., Moghaddam, S. H. A., Mahdavi, S., Ghahremanloo, M., Parsian, S., Wu, Q., and Brisco, B. (2020) Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review. <em>IEEE journal of selected topics in applied earth observations and remote sensing</em>. [Online] 135326–5350. DOI: 10.1109/JSTARS.2020.3021052</p>
+<p>Mandal, M. S. H. and Hosaka, T. (2020) Assessing cyclone disturbances (1988–2016) in the Sundarbans mangrove forests using Landsat and Google Earth Engine. <em>Natural hazards (Dordrecht)</em>. [Online] 102 (1), 133–150. DOI: 10.1007/s11069-020-03914-z</p>
+<p>Ruifeng, L., Kai, Y., Xing, L., Xiaoli, L., Xitao, Z., Xiaocheng, G., Juan, F., and Shixin, C. (2023) Extraction and spatiotemporal changes of open-pit mines during 1985–2020 using Google Earth Engine: A case study of Qingzhou City, Shandong Province, China. <em>Environmental monitoring and assessment</em>. [Online] 195 (1), 209–209. DOI: 10.1007/s10661-022-10837-8</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week_5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
