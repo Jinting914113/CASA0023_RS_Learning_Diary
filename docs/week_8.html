@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jinting Ji">
-<meta name="dcterms.date" content="2024-03-14">
 
-<title>Learning Diary - CASA0023</title>
+<title>Learning Diary - CASA0023 - 8&nbsp; Week 8 - Classification II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,7 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./summary.html" rel="next">
+<link href="./week_7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -109,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8 - Classification II</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -184,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_8.html" class="sidebar-item-text sidebar-link">
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8 - Classification II</span></span></a>
   </div>
 </li>
@@ -210,7 +175,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> 8.1 Summary</a>
+  <ul class="collapse">
+  <li><a href="#land-cover-classification-continued" id="toc-land-cover-classification-continued" class="nav-link" data-scroll-target="#land-cover-classification-continued"><span class="header-section-number">8.1.1</span> <strong>8.1.1 Land Cover Classification (Continued)</strong></a></li>
+  <li><a href="#accuracy-accessment" id="toc-accuracy-accessment" class="nav-link" data-scroll-target="#accuracy-accessment"><span class="header-section-number">8.1.2</span> 8.1.2 Accuracy Accessment</a></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">8.1.3</span> 8.1.3 Practical</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">8.2</span> 8.2 Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">8.3</span> 8.3 Reflection</a></li>
+  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list"><span class="header-section-number">8.4</span> 8.4 Reference list</a></li>
   </ul>
 </nav>
     </div>
@@ -219,26 +192,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Learning Diary - CASA0023</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8 - Classification II</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jinting Ji </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -246,16 +207,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="about" class="level1 unnumbered">
-<h1 class="unnumbered">About</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="summary" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> 8.1 Summary</h2>
+<p>I have taken what I have learnt this week and reviewed the course material and organised it into the following mind map for convenience of review and understanding:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk8/week8_summary.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p>Mind map of week 8 summary</p>
+<p>The following 8.1.1 and 8.1.2 summarise the content of all the sub-elements listed in the mind map:</p>
+<section id="land-cover-classification-continued" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="land-cover-classification-continued"><span class="header-section-number">8.1.1</span> <strong>8.1.1 Land Cover Classification (Continued)</strong></h3>
+<p><strong>The need for landcover data (current or historical):</strong></p>
+<ul>
+<li>Historical and current land cover data are crucial for understanding changes on the Earth’s surface, urban expansion, and managing natural resources effectively.</li>
+</ul>
+<p><strong>The use of pre-classified data:</strong></p>
+<ul>
+<li>Utilization of pre-classified data sources such as GlobeLand30, the European Space Agency’s Climate Change Initiative (CCI) annual global land cover data, and Dynamic World’s near real-time 10m resolution data is highlighted.</li>
+</ul>
+<p><strong>The Dynamic World project:</strong></p>
+<ul>
+<li><p>It shows the application of AI methods for processing Sentinel-2 satellite images to estimate tree cover, urban density, or snow coverage for each pixel, encompassing data handling, preprocessing, normalization, and the classification process with Fully Convolutional Neural Networks (FCNN) and Convolutional Neural Networks (CNN).</p></li>
+<li><p><strong>Accuracy Assessment:</strong></p>
+<ul>
+<li><p>Confusion matrices are used to assess classification accuracy, though their applicability may be limited for real-time updates or different product comparisons.</p></li>
+<li><p>Dynamic World data could be compared by other LULC datasets globally and regionally, like ESA CCI, CGLS ProbaV, ESA Sentinel-2 GLC, MapBiomas, and USGS NLCD, to validate accuracy at specific locations in Brazil, Norway, and the United States, involving resolution and land cover class distribution comparisons.</p></li>
+</ul></li>
+</ul>
+<p><strong>Object-Based Image Analysis and Sub-Pixel Analysis:</strong></p>
+<ul>
+<li><p>Object-Based Image Analysis (OBIA) uses the SLIC algorithm to cluster pixels into superpixels based on homogeneity or heterogeneity.</p></li>
+<li><p>Sub-pixel analysis techniques, including sub-pixel classification, Spectral Mixture Analysis (SMA), and linear spectral unmixing, aim to quantify the proportions of different land cover types within a single pixel.</p></li>
+</ul>
+</section>
+<section id="accuracy-accessment" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="accuracy-accessment"><span class="header-section-number">8.1.2</span> 8.1.2 Accuracy Accessment</h3>
+<p><strong>Accuracy Assessment in Remote Sensing and Machine Learning</strong></p>
+<ul>
+<li><p>Producer’s accuracy, user’s accuracy, and overall accuracy serve as primary metrics for classification model performance evaluation.</p></li>
+<li><p>The Kappa coefficient is employed to measure image classification accuracy, despite its controversies.</p></li>
+<li><p>ROC curves and AUC values are further utilized to evaluate binary classifier performance.</p></li>
+<li><p><strong>F1 Score</strong>: The F1 score, a harmonic mean of precision and recall, is crucial, especially in the context of imbalanced datasets. It provides a balance between the precision (user’s accuracy) and recall (producer’s accuracy), serving as a singular metric to assess binary classification systems where false positives and false negatives might have different implications.</p></li>
+</ul>
+<p><strong>Challenges in Accuracy Assessment</strong></p>
+<ul>
+<li><p>The procurement of suitable test data for accuracy evaluation involves strategies like using new datasets, implementing train/test splits, and applying cross-validation techniques.</p></li>
+<li><p>Spatial cross-validation methods for spatial autocorrelation issues between training and testing data sets is used to mitigate the impact of geographical proximity on model evaluation, ensuring that the training and testing data are sufficiently separate to provide an accurate assessment of model performance.</p></li>
+</ul>
+</section>
+<section id="practical" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="practical"><span class="header-section-number">8.1.3</span> 8.1.3 Practical</h3>
+<p><strong>Summary of this week’s practical:</strong></p>
+<ul>
+<li><p><strong>Vector Data Processing</strong>:</p>
+<ul>
+<li>Loaded Level 2 Global Administrative Unit Layers (GAUL) and styled them on the map. By setting the color, width, and fill color (including transparency), the practice demonstrated how to visually enhance vector data representation. Additionally, learned how to filter the dataset based on specific conditions (e.g., administrative unit names) to focus on a particular study area (e.g., Dar es Salaam).</li>
+</ul></li>
+<li><p><strong>Earth Observation (EO) Data Processing</strong>:</p>
+<ul>
+<li>Switched to using Landsat data, mastering skills in setting scale functions, loading imagery, filtering based on dates and study areas, cloud coverage filtering, applying scale functions, extracting medians, and mapping the output. Furthermore, through creating and utilizing functions, learned how to identify and mask clouds or cloud shadows using Quality Assessment (QA) bands, though it was noted that some masked areas were actually sand or suspended matter, not clouds.</li>
+</ul></li>
+<li><p><strong>Image Classification</strong>:</p>
+<ul>
+<li>Two main methods of image classification - sub pixel analysis and object based image analysis (OBIA). Sub pixel analysis involved defining land cover endmembers (e.g., urban, vegetation, and water) and calculating the fraction of each pixel’s endmembers. OBIA involved clustering similar pixels into objects using techniques like K-means and SNIC, followed by analyzing and classifying these objects.</li>
+</ul></li>
+<li><p><strong>Accuracy Assessment</strong>:</p>
+<ul>
+<li>Explored methods for assessing the accuracy of sub pixel analysis, including hardening the sub pixel image or comparing it with high resolution imagery to evaluate the precision of the classifications.</li>
+</ul></li>
+</ul>
+<p><strong>These images below show the study area and the final results of the sub pixel analysis and object based</strong> <strong>image analysis (OBIA) of the remotely sensed data of the area:</strong></p>
+<p>The study area is <strong>Dar es Salaam</strong>, and below is a clipped Landsat image of this area (to make it easier to compare the effects of the classification results later on):</p>
+<ul>
+<li><strong>Study area:</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk8/Daressalaam.jpg" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p>Clipped Landsat image of Dar es Salaam</p>
+<p><strong>Sub pixel analysis:</strong></p>
+<p>Before I started this classification I checked the resolution of the images and found that the resolution was not very high, so some features were not easily distinguishable (I also sampled some of the polygon samples using the satellite base map from Google Maps as reference). I thought the result of the classification would be poor, but I didn’t realise that the actual result would look OK to the naked eye compared to the satellite data:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk8/Daressalaam_Sub_pixel_Analysis.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The result of Sub pixel analysis</p>
+<p><strong>Object based image analysis:</strong></p>
+<p>The effects of the result from this analysis are significantly worse compared to the previous method:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk8/Daressalaam_Object_based_Image_Analysis.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>The result of Object based image analysis</p>
+<p><strong>Explanation for the final results:</strong></p>
+<ul>
+<li><p>From my observation of Landsat satellite imagery and Google Maps satellite image base map of the study area, I found that the land cover of the area is complex. The mixing of urban and forested or bare or grassy land on the surface of the area is very common. And there is a clear difference between the principle of Object-based classification method and Sub pixel analysis method:</p>
+<ul>
+<li><p>Object based image analysis often performs poorly in areas with high spatial heterogeneity or complex land cover because it relies on spatial proximity and similarity of pixels for classification, potentially missing finer surface variations.</p></li>
+<li><p>Sub pixel analysis examining the composition within each pixel could more intricately represent mixed land cover situations, making it more effective for capturing small-scale and complex features.</p></li>
+</ul></li>
+<li><p>Therefore, the result of Sub pixel analysis is significantly better than the result of Object based image analysis as observed by the naked eyes comparison.</p></li>
+</ul>
+</section>
+</section>
+<section id="application" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="application"><span class="header-section-number">8.2</span> 8.2 Application</h2>
+<p><strong>Sub pixel analysis:</strong></p>
+<p>Vos <em>et al.</em> (2019) use an open-source software toolkit named CoastSat, combined with Google Earth Engine (GEE) and Sub-pixel analysis techniques, to extract time series of sandy shoreline positions from publicly available satellite images. It achieves an accuracy of approximately 10 meters (Vos <em>et al.</em>, 2019). Sub pixel analysis, applying a robust Sub-pixel resolution shoreline detection algorithm to pre-processed satellite images, which includes supervised image classification and Sub pixel border segmentation, enhances the accuracy and detail recognition capability of shoreline mapping (Vos <em>et al.</em>, 2019). <strong>However</strong>, this method relies on advanced image processing technologies and complex computations, requiring substantial computing resources and algorithm optimization, and may take a longer time when dealing with large-scale data. In addition, despite GEE’s powerful data processing capabilities, users need to have a certain level of familiarity and understanding of the GEE platform and related APIs. When processing extremely large datasets, performance bottlenecks or service limitations might be encountered.</p>
+<p><strong>Object based image analysis:</strong></p>
+<p>Ali <em>et al.</em> (2023) using object-based image analysis on the Google Earth Engine platform map the area changes of 480 glaciers on Novaya Zemlya from 1986-1989 to 2019-2021, which reveals a total glacier area reduction of 5.8%. This method has streamlined the process of generating accurate glacier outlines, enhancing efficiency (Ali <em>et al.</em>, 2023). The object based image analysis method integrating multispectral Landsat imagery and the computational resources of Google Earth Engine automates the mapping of glacier changes and generates highly accurate glacier outlines with an overall accuracy rate of 96-97% (Ali <em>et al.</em>, 2023). <strong>While</strong> this method effectively reduces the need for manual corrections, it may not perform well in mapping debris-covered glaciers or areas covered with fresh snow and thin cloud layers (Ali <em>et al.</em>, 2023). Additionally, reliance on Google Earth Engine might limit access to specific datasets and advanced analysis tools.</p>
+</section>
+<section id="reflection" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">8.3</span> 8.3 Reflection</h2>
+<p>During this week I have gained knowledge of unfamiliar or new skills such as Dynamic World Project, Sub pixel analysis, Object based image analysis, all of which are cool and greatly enriched my knowledge of remotely sensed classification methods and accuracy assessment.</p>
+<p>As it may be largely unfamiliar content, I was not very clear about the structure of the course content, so after reviewing the study material I put together a mind map to make it easier to quickly clarify the structure of content in future reviews. I had never come across the two classification methods sub pixel analysis and Object based image analysis before, but I was impressed with sub pixel analysis during this week’s study. I didn’t realise that sub pixel analysis could classify remote sensing images with low resolution with good results. In the future, this method could be considered for analysing the land cover of images with low resolution and complex land cover.</p>
+</section>
+<section id="reference-list" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="reference-list"><span class="header-section-number">8.4</span> 8.4 Reference list</h2>
+<p>Ali, A., Dunlop, P., Coleman, S., Kerr, D., McNabb, R. W., and Noormets, R. (2023) Glacier area changes in Novaya Zemlya from 1986–89 to 2019–21 using object-based image analysis in Google Earth Engine. <em>Journal of glaciology</em>. [Online] 69 (277), 1305–1316. DOI: 10.1017/jog.2023.18.</p>
+<p>Vos, K., Splinter, K. D., Harley, M. D., Simmons, J. A., and Turner, I. L. (2019) CoastSat: A Google Earth Engine-enabled Python toolkit to extract shorelines from publicly available satellite imagery. <em>Environmental modelling &amp; software : with environment data news</em>. [Online] 122104528-. DOI: 10.1016/j.envsoft.2019.104528.</p>
 
 
 </section>
@@ -496,10 +572,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./week_7.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7 - Classification I</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
