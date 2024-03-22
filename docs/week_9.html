@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Learning Diary - CASA0023 - 9&nbsp; Week 9 - SAR</title>
+<title>Learning Diary - CASA0023 - 9&nbsp; Week 9 - Synthetic Aperture Radar (SAR)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - SAR</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week_9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -142,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -190,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week_9.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - SAR</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,14 +171,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">9.1</span> 9.1 Summary</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">9.2</span> 9.2 Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">9.3</span> 9.3 Reflection</a></li>
+  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list"><span class="header-section-number">9.4</span> 9.4 Reference list</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - SAR</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR)</span></h1>
 </div>
 
 
@@ -227,15 +202,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>In summary, this book has no content whatsoever.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="summary" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.1</span> 9.1 Summary</h2>
+<p>Synthetic Aperture Radar (SAR) is an active remote sensing technology that uses sensors to emit electromagnetic energy and record the energy reflected from the Earth. Unlike traditional optical remote sensing, SAR data more closely represent surface characteristics like structure and moisture. Due to the impracticality of long antennas in space, SAR achieves higher spatial resolution by synthesizing data from multiple shorter antenna acquisitions.</p>
+<p>The summary of this week’s lesson on SAR will be divided into two parts, SAR Fundamentals and Practical Change Detection, and I’ve created detailed mind maps to summarise each of these parts:</p>
+<ul>
+<li><strong>The summary of SAR Fundamentals:</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk9/SAR_Fundamentals.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p>The mind map of the summary for SAR Fundamentals</p>
+<ul>
+<li><strong>The summary of Practical Change Detection:</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk9/Practical_Change_Detection.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p>The mind map of the summary for Practical Change Detection</p>
+</section>
+<section id="application" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="application"><span class="header-section-number">9.2</span> 9.2 Application</h2>
+<p>SAR technology in remotely sensing has various applications, including earth surface monitoring, environmental and earth system observation, 2D/3D surface mapping, and security-related applications (Sun <em>et al.</em>, 2017). SAR technology offers high-resolution data capable of operating under various environmental conditions, but it also encounters challenges such as complex data processing and adaptability to specific applications (Sun <em>et al.</em>, 2017).</p>
+<p>He <em>et al.</em> (2022) show the application of SAR data in rapid flood mapping and agricultural impact assessment, providing a valuable tool for understanding the extent of flood damage, particularly in agricultural lands. They use near-real-time inundation extents from the RAPID system combined with CORINE Land Cover data to analyze the impact of the 2021 Western Europe flood on agricultural lands (He <em>et al.</em>, 2022). They identify approximately 1920 km² of flooded area, with 64% being agricultural land, highlighting the significant impact on the region’s agricultural productivity (He <em>et al.</em>, 2022). The use of SAR data allows for detailed and rapid assessment of flood impact, crucial for effective response and management. <strong>However</strong>, He <em>et al.</em> (2022) highlight limitations such as reliance on satellite-based precipitation data, which may underestimate precipitation in complex terrains, and the resolution limitations in capturing flood extents along small rivers.</p>
+<p>Najoui <em>et al.</em> (2022) use 3644 Synthetic Aperture Radar (SAR) images from the ESA Envisat mission, covering 2002 to 2012, to detect and analyze the spatial distribution of 18,063 oil slicks in the Gulf of Guinea. These slicks included both anthropogenic oil spills from platforms and ships, as well as natural oil seeps, highlighting the extensive oil pollution in this region. The research demonstrates the use of SAR imagery in identifying oil spills and seeps over a vast marine area, contributing significantly to environmental monitoring and pollution assessment in the Gulf of Guinea. The use of SAR provides an efficient means for widespread oil pollution detection across the Gulf of Guinea, leveraging long-term image archives for historical analysis (Najoui <em>et al.</em>, 2022). <strong>However</strong>, challenges include differentiation between anthropogenic and natural oil occurrences, and the complex processing required for SAR data interpretation (Najoui <em>et al.</em>, 2022).</p>
+</section>
+<section id="reflection" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">9.3</span> 9.3 Reflection</h2>
+<p>SAR is a concept that I heard a lot in my undergraduate studies, but I wasn’t really familiar with its applications, especially the newest ones in the last few years. Therefore, completing this week’s course material and reading some of its most recent material filled in the gaps in my knowledge and skills in this area.</p>
+<p>I am more interested in SAR than temperature, which is why I chose this section to appear in my learning diary rather than temperature. In this week’s lecture I was very interested in what the teacher said about the application of remotely sensed technology, SAR, to the detection of houses destroyed in war. I thought that was really cool and a meaningful thing to do because it would be very helpful for post-disaster or post-war reconstruction work. Perhaps for government workers in geography-related professions, SAR might be useful for detecting changes in land cover due to its rapid detection characteristics.</p>
+<p>This is the last section of this module, and it ends here. Overall, through this module, I have learnt and consolidated the basic knowledge of remotely sensing through lecture and practical, and I have gained a better understanding of some recent remotely sensing applications through reading literatures in recent years. All these will make me more confident in my future work. I am very grateful to the teachers and teaching assistants for their efforts to make me gain a lot!</p>
+</section>
+<section id="reference-list" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="reference-list"><span class="header-section-number">9.4</span> 9.4 Reference list</h2>
+<p>He, K., Yang, Q., Shen, X., and Anagnostou, E. N. (2022) Brief communication: Western Europe flood in 2021 - mapping agriculture flood exposure from synthetic aperture radar (SAR). <em>Natural hazards and earth system sciences</em>. [Online] 22 (9), 2921–2927. DOI: 10.5194/nhess-22-2921-2022.</p>
+<p>Najoui, Z., Amoussou, N., Riazanoff, S., Aurel, G., and Frappart, F. (2022) Oil slicks in the Gulf of Guinea - 10 years of Envisat Advanced Synthetic Aperture Radar observations. <em>Earth system science data</em>. [Online] 14 (10), 4569–4588. DOI: 10.5194/essd-14-4569-2022.</p>
+<p>Sun, H., Shimada, M. and Xu, F. (2017) Recent Advances in Synthetic Aperture Radar Remote Sensing-Systems, Data Processing, and Applications. <em>IEEE geoscience and remote sensing letters</em>. [Online] 14 (11), 2013–2016. DOI: 10.1109/LGRS.2017.2747602.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
