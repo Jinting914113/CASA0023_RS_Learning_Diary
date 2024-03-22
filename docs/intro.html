@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Learning Diary - CASA0023 - 1&nbsp; Week 1</title>
+<title>Learning Diary - CASA0023 - 1&nbsp; Week 1 - An Introduction to Remotely Sensing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,60 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -127,7 +74,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - An Introduction to Remotely Sensing</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,7 +108,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - An Introduction to Remotely Sensing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,7 +175,16 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> 1.1 Summary</a>
+  <ul class="collapse">
+  <li><a href="#active-and-passive-remote-sensing" id="toc-active-and-passive-remote-sensing" class="nav-link" data-scroll-target="#active-and-passive-remote-sensing"><span class="header-section-number">1.1.1</span> 1.1.1 Active and passive remote sensing</a></li>
+  <li><a href="#resolutions-of-remotely-sensed-data" id="toc-resolutions-of-remotely-sensed-data" class="nav-link" data-scroll-target="#resolutions-of-remotely-sensed-data"><span class="header-section-number">1.1.2</span> 1.1.2 4 resolutions of remotely sensed data</a></li>
+  <li><a href="#how-we-choose-data" id="toc-how-we-choose-data" class="nav-link" data-scroll-target="#how-we-choose-data"><span class="header-section-number">1.1.3</span> 1.1.3 How we choose data</a></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">1.1.4</span> 1.1.4 Practical</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">1.2</span> 1.2 Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> 1.3 Reflection</a></li>
+  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list"><span class="header-section-number">1.4</span> 1.4 Reference list</a></li>
   </ul>
 </nav>
     </div>
@@ -237,7 +193,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - An Introduction to Remotely Sensing</span></h1>
 </div>
 
 
@@ -252,23 +208,135 @@ div.csl-indent {
 
 </header>
 
-<section id="introduction" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="summary" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> 1.1 Summary</h2>
+<p>I have organised the framework for the content of this week’s summary in the form of a mind map, and the following summary will cover these aspects:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk1/week_1_summary.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p>The mind map of the outline for week 1’s summary</p>
+<section id="active-and-passive-remote-sensing" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="active-and-passive-remote-sensing"><span class="header-section-number">1.1.1</span> 1.1.1 Active and passive remote sensing</h3>
+<p><strong>Active and passive sensor:</strong></p>
+<p>Both active and passive sensors receive information from a distance, but the former receives electromagnetic waves, etc., which are actively emitted by themselves, while the latter do not emit themselves.</p>
+<p><strong>How electromagnetic waves interact with Earth’s surface and Atmosphere:</strong></p>
+<p>Electromagnetic radiation (EMR) is one of the two main sources such as sensor reception.</p>
+<ul>
+<li><p><strong>How electromagnetic waves interact with Earth’s surface:</strong></p>
+<p>Electromagnetic waves, upon reaching the Earth’s surface, undergo various changes including absorption, reflection, and transmission based on the surface’s properties. Dark surfaces absorb more light, whereas light surfaces reflect more. The interaction is also described by the Bidirectional Reflectance Distribution Function (BRDF), which accounts for how light is reflected based on surface characteristics and the angles of incoming and observed light.</p></li>
+<li><p><strong>How electromagnetic waves interact with the atmosphere:</strong></p>
+<p>Clouds are important factors affecting the quality of satellite images due to the interaction of electromagnetic waves with the atmosphere.</p>
+<p>As electromagnetic waves traverse the Earth’s atmosphere, they are scattered by particles and gases, affecting the clarity of remotely sensed data. The scattering varies with the particle size relative to the wavelength of light, including Rayleigh, Mie, and non-selective scattering. The atmosphere also absorbs certain wavelengths, which can limit the light that reaches the surface and is reflected back.</p>
+<p>In addition, although Satellite (and aerial) sensors are affected by the atmopsheric scattering, they can be corrected for by atmospheric correction (next week’s content).</p></li>
+</ul>
+<p><strong>Remotely sensed data formats:</strong></p>
+<p>Raster data, depending on the sensor (GeoTIFF (most common), others: BIL, BSQ, BIP, etc.)).</p>
+</section>
+<section id="resolutions-of-remotely-sensed-data" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="resolutions-of-remotely-sensed-data"><span class="header-section-number">1.1.2</span> 1.1.2 4 resolutions of remotely sensed data</h3>
+<p><strong>Spatial and temporal resolution:</strong></p>
+<p>Spatial resolution is the size of the actual area represented by each pixel grid. Temporal resolution is the time interval between visiting the same location and recording the data. The rest are two rather vague resolution types, but summarised as follows.</p>
+<p><strong>Spectral resolution:</strong></p>
+<p>Spectral resolution (Spectral) refers to the number of recorded bands, which reflects the ability of a remote sensing system to spectrally resolve surface reflection or radiation in different bands. One band usually corresponds to a single raster layer. Higher spectral resolution means that more spectral information are captured by the sensor, thus providing richer feature classification and identification capabilities. Spectral resolution may be discrete (e.g.&nbsp;multi-spectral: the sensor can only measure spectral information over a limited number of bands) or continuous (e.g.&nbsp;hyperspectral: the sensor is able to measure spectral information over a continuous range, not just over a number of discrete bands).</p>
+<p><strong>Radiometric resolution:</strong></p>
+<p>Radiometric resolution is the ability of a remote sensing system to resolve surface reflections or radiation in different wavelength bands. Higher radiometric resolution means that the sensor can better distinguish features in different bands and provide richer spectral information.</p>
+</section>
+<section id="how-we-choose-data" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="how-we-choose-data"><span class="header-section-number">1.1.3</span> 1.1.3 How we choose data</h3>
+<p>The choice of data in remote sensing is significantly influenced by environmental and sensor constraints. Environmental factors such as cloud cover can obscure the Earth’s surface, necessitating the use of active sensors like Synthetic Aperture Radar (SAR) that can penetrate clouds and collect data under all weather conditions. On the other hand, sensor constraints, including the resolution capabilities (spatial, spectral, temporal, and radiometric) of the sensor, dictate the suitability of the data for specific applications. For instance, high spatial resolution is crucial for detailed urban planning, while spectral resolution is vital for environmental monitoring. These constraints guide the selection of appropriate remote sensing data to ensure accurate and relevant analysis.</p>
+</section>
+<section id="practical" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="practical"><span class="header-section-number">1.1.4</span> 1.1.4 Practical</h3>
+<p>To make it easier for future revision I will summarise the structure of the main content covered in <a href="https://andrewmaclachlan.github.io/CASA0023/intro.html">this week’s practical</a> as follows:</p>
+<ul>
+<li><p><strong>Exploration of EO Dashboard:</strong> An introduction to the EOdashboard website provided insights into various EO data available for later exploration in the module.</p></li>
+<li><p><strong>Git and .gitignore Configuration:</strong> Guidance on using Git for project management, especially the importance of setting up a .gitignore file to avoid uploading large data files to GitHub.</p></li>
+<li><p><strong>Sentinel Data Download and Processing:</strong></p>
+<ul>
+<li><p>Making an account on the Copernicus Open Access Hub.</p></li>
+<li><p>Searching for specific areas and filtering by cloud cover and date.</p></li>
+<li><p>Understanding the significance of Sentinel-2 product types and processing levels.</p></li>
+</ul></li>
+<li><p><strong>Data Analysis in QGIS:</strong> Instructions on how to open and explore 10m bands in QGIS, including creating a true color image and understanding radiometric resolution limitations.</p></li>
+<li><p><strong>Data Processing Using SNAP:</strong></p>
+<ul>
+<li><p>An introduction to Sentinel Application Platform (SNAP) toolboxes for pre-processing and analyzing remotely sensed data.</p></li>
+<li><p>Practical exercises in loading data, creating color composites, and exploring SNAP layout and functionalities.</p></li>
+</ul></li>
+<li><p><strong>Advanced Topics in Remote Sensing Data Analysis:</strong></p>
+<ul>
+<li><p>Detailed steps for downloading, processing, and analyzing Landsat imagery.</p></li>
+<li><p>Exploration of spectral signatures, comparison between Sentinel and Landsat data, and understanding of various spatial resolutions and their implications on data analysis.</p></li>
+</ul></li>
+</ul>
+<p>Below I will summarise what I was unfamiliar with or had trouble with at first in doing the practical:</p>
+<p><strong>Resampling Principle:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk1/Resampling_Principle.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
+<p><strong>SNAP (Sentinels Application Platform, specially for remotely sensed data):</strong></p>
+<p>Although I have taken a compulsory remote sensing course in my undergraduate studies, we have mainly studied ENVI not SNAP, so I will summarise some of the SNAP operations that I have learnt this week:</p>
+<ul>
+<li><p>Because my computer is a MAC system, SNAP could not work properly at first. But after I looked up the information, I found that I could use Parallels Desktop software with a Windows 11 virtual machine, and then SNAP could be downloaded into it and run normally.</p></li>
+<li><p><strong>Loding data:</strong></p>
+<p>443 nm after the B1 band indicates that the wavelength of the band is 443 nm</p>
+<p><img src="wk1/SANP_Data_Loading.png" class="img-fluid"></p></li>
+<li><p><strong>Contrast Enhancement Operation:</strong> View &gt; Tool Windows &gt; Colour Manipulation</p></li>
+<li><p>Different types of surface objects reflect and absorb different wavelengths differently, and this feature could be used to identify the type of ground objects by using many tools under analysis in SNAP, such as the ‘scatter plot’.</p></li>
+<li><p><strong>Resampling image:</strong></p>
+<p><img src="wk1/Resampling_image.png" class="img-fluid"></p></li>
+<li><p>The Masking tool can be used to crop the data (cropping is only one of the functions of the Masking tool). Masking and resampling enable bands with different resolutions to have the same resolution for other processing and analyses such as band calculations. Note that the mask vector data should be selected to the required area.</p>
+<p><img src="wk1/masking_operation.png" class="img-fluid"></p>
+<p><img src="wk1/masking_clipped.png" class="img-fluid"></p></li>
+<li><p><a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm"><strong>the tasseled cap transformation</strong></a> <strong>(Raster &gt; Band Maths)</strong></p>
+<ul>
+<li><p>Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials</p></li>
+<li><p>Greenness, associated with green vegetation</p></li>
+<li><p>Wetness, associated with moisture</p></li>
+</ul></li>
+</ul>
+<p>Stars is faster than terra, terra is faster than raster.</p>
+<p>There are some practical content that I have expanded on and put into the application section to summarise it.</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> 1.2 Application</h2>
+<p><strong>It is possible to distinguish different feature classes based on the reflected spectral lines of different ground objects:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk1/Reflectance_Spectra_of_Materials_on_Earth’s_Surface.jpeg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Reflectance Spectra of Materials on Earth’s Surface (source: <a href="https://webbtelescope.org/contents/media/images/01F8GFAGTM98YTKDS0FZAAWWV2">WEBB SPACE TELESCOPE</a>)</p>
+<p><strong>Different bands synthesis from different sensors in Landsat could be used for different things:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk1/OLI_spectral_band_synthesis.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Bands synthesis for Landsat OLI (source: <a href="https://landsat.gsfc.nasa.gov/data/data-use/">NASA Landsat Science</a>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="wk1/TM_bands_synthesis.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Bands synthesis for Landsat TM</p>
+<p>Band synthesis techniques for remotely sensed data are actually not limited to those mentioned above. For example, the study of Liu <em>et al.</em> (2023). Liu <em>et al.</em> (2023) propose a novel method for synthesizing diverse hyperspectral remote sensing images using diffusion models. They introduce a conditional Vector Quantized Generative Adversarial Network (VQGAN) that maps high-dimensional hyperspectral data into a low-dimensional latent space, facilitating the diffusion process. This approach aims to generate hyperspectral images with high spatial resolution from RGB images without needing hyperspectral sensors, addressing the limitations of imaging sensors and the high cost of hyperspectral data acquisition. In addition, the synthesis of bands in hyperspectral images aims to overcome the challenges of obtaining high-quality and high spatial resolution hyperspectral images (HSIs), which are crucial for applications like vegetation index mapping, mineralogical analysis, and water monitoring. The method leverages RGB images as conditional inputs for generating HSIs, aiming to produce high-quality HSIs efficiently and cost-effectively. <strong>However</strong>, challenges could include computational demands, the complexity of accurately modeling the hyperspectral data’s high-dimensional space, and ensuring the synthetic data’s applicability across different remote sensing applications.</p>
+</section>
+<section id="reflection" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> 1.3 Reflection</h2>
+<p>What impressed me the most this week was that the computer on my MAC system couldn’t run SNAP, I used Parallels Desktop software to run it in a Windows 11 virtual machine. In the future, I’ll be able to use a virtual machine to run software that doesn’t run on a MAC, and this gain means a lot for me.</p>
+<p>In addition, at the knowledge level, through this week’s lecture and practical study, I consolidated my basic knowledge related to remote sensing, such as band synthesis, reflectance spectral characteristics of different surface objects, etc. I found it very interesting to read the literature that the application of band synthesis in remote sensing data was actually beyond my knowledge, but it has enabled me to learn more about remote sensing image synthesis. I am looking forward to exploring remote sensing techniques in more depth!</p>
+</section>
+<section id="reference-list" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="reference-list"><span class="header-section-number">1.4</span> 1.4 Reference list</h2>
+<p>Liu, L., Chen, B., Chen, H., Zou, Z., and Shi, Z. (2023) Diverse Hyperspectral Remote Sensing Image Synthesis with Diffusion Models. <em>IEEE transactions on geoscience and remote sensing</em>. [Online] 611–1. DOI: 10.1109/TGRS.2023.3335975</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

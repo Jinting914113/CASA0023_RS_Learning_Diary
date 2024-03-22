@@ -1,4 +1,59 @@
 # References {.unnumbered}
 
 ::: {#refs}
+<div>
+
+</div>
 :::
+
+**Week 1**
+
+Liu, L., Chen, B., Chen, H., Zou, Z., and Shi, Z. (2023) Diverse Hyperspectral Remote Sensing Image Synthesis with Diffusion Models. *IEEE transactions on geoscience and remote sensing*. \[Online\] 611–1. DOI: 10.1109/TGRS.2023.3335975
+
+**Week 3**
+
+Aasen, H., Honkavaara, E., Lucieer, A., & Zarco-Tejada, P. J. (2018) Quantitative Remote Sensing at Ultra-High Resolution with UAV Spectroscopy: A Review of Sensor Technology, Measurement Procedures, and Data Correction Workflows. *Remote sensing (Basel, Switzerland)*. \[Online\] 10 (7), 1091-. DOI: 10.3390/rs10071091.
+
+Farg, E., Ramadan, M. N., and Arafat, S. M. (2019) Classification of some strategic crops in Egypt using multi remotely sensing sensors and time series analysis. *The Egyptian journal of remote sensing and space sciences*. \[Online\] 22 (3), 263–270. DOI: 10.1016/j.ejrs.2019.07.002.
+
+Sims, D. A., Brzostek, E. R., Rahman, A. F., Dragoni, D., and Phillips, R. P. (2014) An improved approach for remotely sensing water stress impacts on forest C uptake. *Global change biology*. \[Online\] 20 (9), 2856–2866. DOI: 10.1111/gcb.12537.
+
+**Week 4**
+
+Dong, J., Cui, Y., Di, Y., Gao, X., Chen, X., Yang, L., Cai, Y., Ning, J. and Liu, J. (2023) Opportunities and challenges in monitoring cultivated land red line in big data era. *Bulletin of Chinese Academy of Sciences*. \[Online\] 38(12), 1781-1792. DOI:10.16418/j.issn.1000-3045.20230928001.
+
+Pan, H., Tong, X., Xu, X., Luo, X., Jin, Y., Xie, H., and Li, B. (2020) Updating of land cover maps and change analysis using globeland30 product: A case study in Shanghai metropolitan area, China. *Remote sensing (Basel, Switzerland)*. \[Online\] 12 (19), 1–25. DOI: 10.3390/rs12193147.
+
+Tong, T. (2023) Application of Remote Sensing Technology in Supervision of Cultivated Land Protection. *Modern Surveying and Mapping*. \[Online\] 46(3), 30-33. DOI:10.3969/j.issn.1672-4097.2023.03.009.
+
+Xu, L., Ming, D., Du, T., Chen, Y., Dong, D., and Zhou, C. (2022) Delineation of cultivated land parcels based on deep convolutional networks and geographical thematic scene division of remotely sensed images. *Computers and electronics in agriculture*. \[Online\] 192106611-. https://doi.org/10.1016/j.compag.2021.106611.
+
+**Week 6**
+
+Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A., Mirmazloumi, S. M., Moghaddam, S. H. A., Mahdavi, S., Ghahremanloo, M., Parsian, S., Wu, Q., and Brisco, B. (2020) Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review. *IEEE journal of selected topics in applied earth observations and remote sensing*. \[Online\] 135326–5350. DOI: 10.1109/JSTARS.2020.3021052.
+
+Mandal, M. S. H. and Hosaka, T. (2020) Assessing cyclone disturbances (1988–2016) in the Sundarbans mangrove forests using Landsat and Google Earth Engine. *Natural hazards (Dordrecht)*. \[Online\] 102 (1), 133–150. DOI: 10.1007/s11069-020-03914-z.
+
+Ruifeng, L., Kai, Y., Xing, L., Xiaoli, L., Xitao, Z., Xiaocheng, G., Juan, F., and Shixin, C. (2023) Extraction and spatiotemporal changes of open-pit mines during 1985–2020 using Google Earth Engine: A case study of Qingzhou City, Shandong Province, China. *Environmental monitoring and assessment*. \[Online\] 195 (1), 209–209. DOI: 10.1007/s10661-022-10837-8.
+
+**Week 7**
+
+Noi Phan, T., Kuch, V., and Lehnert, L. (2020) Land cover classification using google earth engine and random forest classifier-the role of image composition. *Remote sensing (Basel, Switzerland)*. \[Online\] 12 (15), 2411-. DOI: 10.3390/RS12152411.
+
+Pande, C. B. et al. (2024) Impact of land use/land cover changes on evapotranspiration and model accuracy using Google Earth engine and classification and regression tree modeling. *Geomatics, natural hazards and risk*. \[Online\] 15 (1), . DOI: 10.1080/19475705.2023.2290350.
+
+Tassi, A., Gigante, D., Modica, G., Di Martino, L., and Vizzari, M. (2021) Pixel-vs. Object-based landsat 8 data classification in google earth engine using random forest: The case study of maiella national park. *Remote sensing (Basel, Switzerland)*. \[Online\] 13 (12), 2299-. DOI: 10.3390/rs13122299.
+
+**Week 8**
+
+Ali, A., Dunlop, P., Coleman, S., Kerr, D., McNabb, R. W., and Noormets, R. (2023) Glacier area changes in Novaya Zemlya from 1986–89 to 2019–21 using object-based image analysis in Google Earth Engine. *Journal of glaciology*. \[Online\] 69 (277), 1305–1316. DOI: 10.1017/jog.2023.18.
+
+Vos, K., Splinter, K. D., Harley, M. D., Simmons, J. A., and Turner, I. L. (2019) CoastSat: A Google Earth Engine-enabled Python toolkit to extract shorelines from publicly available satellite imagery. *Environmental modelling & software : with environment data news*. \[Online\] 122104528-. DOI: 10.1016/j.envsoft.2019.104528.
+
+**Week 9**
+
+He, K., Yang, Q., Shen, X., and Anagnostou, E. N. (2022) Brief communication: Western Europe flood in 2021 - mapping agriculture flood exposure from synthetic aperture radar (SAR). *Natural hazards and earth system sciences*. \[Online\] 22 (9), 2921–2927. DOI: 10.5194/nhess-22-2921-2022.
+
+Najoui, Z., Amoussou, N., Riazanoff, S., Aurel, G., and Frappart, F. (2022) Oil slicks in the Gulf of Guinea - 10 years of Envisat Advanced Synthetic Aperture Radar observations. *Earth system science data*. \[Online\] 14 (10), 4569–4588. DOI: 10.5194/essd-14-4569-2022.
+
+Sun, H., Shimada, M. and Xu, F. (2017) Recent Advances in Synthetic Aperture Radar Remote Sensing-Systems, Data Processing, and Applications. *IEEE geoscience and remote sensing letters*. \[Online\] 14 (11), 2013–2016. DOI: 10.1109/LGRS.2017.2747602.

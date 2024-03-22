@@ -89,8 +89,8 @@ It occurs to me that there is also a geographic cloud computing platform being d
 
 ## 6.4 Reference list
 
-Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A., Mirmazloumi, S. M., Moghaddam, S. H. A., Mahdavi, S., Ghahremanloo, M., Parsian, S., Wu, Q., and Brisco, B. (2020) Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review. *IEEE journal of selected topics in applied earth observations and remote sensing*. \[Online\] 135326–5350. DOI: 10.1109/JSTARS.2020.3021052
+Amani, M., Ghorbanian, A., Ahmadi, S. A., Kakooei, M., Moghimi, A., Mirmazloumi, S. M., Moghaddam, S. H. A., Mahdavi, S., Ghahremanloo, M., Parsian, S., Wu, Q., and Brisco, B. (2020) Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review. *IEEE journal of selected topics in applied earth observations and remote sensing*. \[Online\] 135326–5350. DOI: 10.1109/JSTARS.2020.3021052.
 
-Mandal, M. S. H. and Hosaka, T. (2020) Assessing cyclone disturbances (1988–2016) in the Sundarbans mangrove forests using Landsat and Google Earth Engine. *Natural hazards (Dordrecht)*. \[Online\] 102 (1), 133–150. DOI: 10.1007/s11069-020-03914-z
+Mandal, M. S. H. and Hosaka, T. (2020) Assessing cyclone disturbances (1988–2016) in the Sundarbans mangrove forests using Landsat and Google Earth Engine. *Natural hazards (Dordrecht)*. \[Online\] 102 (1), 133–150. DOI: 10.1007/s11069-020-03914-z.
 
-Ruifeng, L., Kai, Y., Xing, L., Xiaoli, L., Xitao, Z., Xiaocheng, G., Juan, F., and Shixin, C. (2023) Extraction and spatiotemporal changes of open-pit mines during 1985–2020 using Google Earth Engine: A case study of Qingzhou City, Shandong Province, China. *Environmental monitoring and assessment*. \[Online\] 195 (1), 209–209. DOI: 10.1007/s10661-022-10837-8
+Ruifeng, L., Kai, Y., Xing, L., Xiaoli, L., Xitao, Z., Xiaocheng, G., Juan, F., and Shixin, C. (2023) Extraction and spatiotemporal changes of open-pit mines during 1985–2020 using Google Earth Engine: A case study of Qingzhou City, Shandong Province, China. *Environmental monitoring and assessment*. \[Online\] 195 (1), 209–209. DOI: 10.1007/s10661-022-10837-8.

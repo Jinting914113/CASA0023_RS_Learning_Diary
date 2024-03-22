@@ -205,8 +205,8 @@ Overall, I have learnt knowledge and skills in remotely sensed image product cor
 
 ## 3.4 Reference list
 
-Aasen, H., Honkavaara, E., Lucieer, A., & Zarco-Tejada, P. J. (2018) Quantitative Remote Sensing at Ultra-High Resolution with UAV Spectroscopy: A Review of Sensor Technology, Measurement Procedures, and Data Correction Workflows. *Remote sensing (Basel, Switzerland)*. \[Online\] 10 (7), 1091-. https://doi.org/10.3390/rs10071091
+Aasen, H., Honkavaara, E., Lucieer, A., & Zarco-Tejada, P. J. (2018) Quantitative Remote Sensing at Ultra-High Resolution with UAV Spectroscopy: A Review of Sensor Technology, Measurement Procedures, and Data Correction Workflows. *Remote sensing (Basel, Switzerland)*. \[Online\] 10 (7), 1091-. DOI: 10.3390/rs10071091.
 
-Farg, E., Ramadan, M. N., and Arafat, S. M. (2019) Classification of some strategic crops in Egypt using multi remotely sensing sensors and time series analysis. *The Egyptian journal of remote sensing and space sciences*. \[Online\] 22 (3), 263–270. https://doi.org/10.1016/j.ejrs.2019.07.002
+Farg, E., Ramadan, M. N., and Arafat, S. M. (2019) Classification of some strategic crops in Egypt using multi remotely sensing sensors and time series analysis. *The Egyptian journal of remote sensing and space sciences*. \[Online\] 22 (3), 263–270. DOI: 10.1016/j.ejrs.2019.07.002.
 
-Sims, D. A., Brzostek, E. R., Rahman, A. F., Dragoni, D., and Phillips, R. P. (2014) An improved approach for remotely sensing water stress impacts on forest C uptake. *Global change biology*. \[Online\] 20 (9), 2856–2866. https://doi.org/10.1111/gcb.12537
+Sims, D. A., Brzostek, E. R., Rahman, A. F., Dragoni, D., and Phillips, R. P. (2014) An improved approach for remotely sensing water stress impacts on forest C uptake. *Global change biology*. \[Online\] 20 (9), 2856–2866. DOI: 10.1111/gcb.12537.
